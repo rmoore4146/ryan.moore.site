@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class HelloWorldController {
 
-    @RequestMapping(value = "/m", method = RequestMethod.GET)
+    @RequestMapping(value = "/helloWorld", method = RequestMethod.POST)
     public String helloGet(ModelMap map, HttpServletRequest request) {
 
         String param = request.getParameter("name");
