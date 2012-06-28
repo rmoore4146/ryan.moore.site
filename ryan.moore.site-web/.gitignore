@@ -20,6 +20,10 @@
 *.tar
 *.zip
 
+# Project files #
+#################
+*.iml
+
 # Logs #
 ######################
 *.log
@@ -36,4 +40,4 @@ Thumbs.db
 
 # Whole target #
 ################
-target/**/*
+target/*
