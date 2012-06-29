@@ -8,8 +8,9 @@
     <head>
         <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Hello World Controller</title>
+        <title>Herro Ther Dolphin</title>
         <link type="text/css" href="${contextPath}/site/css/smoothness/jquery-ui-1.8.21.custom.css" rel="Stylesheet" />
+        <link type="text/css" href="${contextPath}/site/css/common.css" rel="Stylesheet" />
         <link type="text/css" href="${contextPath}/site/css/helloWorld.css" rel="Stylesheet" />
         <script type="text/javascript" src="${contextPath}/site/javascript/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="${contextPath}/site/javascript/helloWorld.js"></script>

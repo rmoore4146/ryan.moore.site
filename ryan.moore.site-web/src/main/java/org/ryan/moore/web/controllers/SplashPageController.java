@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class SplashPageController {
 
-    @RequestMapping(value = "/m", method = RequestMethod.GET)
+    @RequestMapping(value = "/splash", method = RequestMethod.GET)
     public String helloGet(ModelMap map, HttpServletRequest request) {
 
         return "splashPage";

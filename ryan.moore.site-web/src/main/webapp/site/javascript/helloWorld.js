@@ -12,7 +12,10 @@ var helloWorld = {
         });
 
         $(function() {
-            $("#accordion").accordion();
+            $("#accordion").accordion({
+                autoHeight: false,
+                navigation: true
+            });
         });
     }
 };

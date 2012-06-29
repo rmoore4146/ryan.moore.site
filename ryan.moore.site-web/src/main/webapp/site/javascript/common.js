@@ -1,11 +1,13 @@
 var common = {
 
+    basePath: 'm/',
+
     postToForm: function(uri, map, newWindowBoolean) {
         $('#defaultForm').remove();
         if(newWindowBoolean) {
-            $('<form name="defaultForm" action="' + uri + '" method="POST" target="_blank" id="defaultForm"></form>').appendTo(document.body);
+            $('<form name="defaultForm" action="' + common.basePath + uri + '" method="POST" target="_blank" id="defaultForm"></form>').appendTo(document.body);
         } else {
-            $('<form name="defaultForm" action="' + uri + '" method="POST" id="defaultForm"></form>').appendTo(document.body);
+            $('<form name="defaultForm" action="' + common.basePath + uri + '" method="POST" id="defaultForm"></form>').appendTo(document.body);
         }
         $.each(map, function(key, value) {
             var decodedValue = value;

@@ -19,6 +19,6 @@ var splash = {
     },
 
     continue: function() {
-        common.postToForm("m/helloWorld", {'name': "DOLPHIN"}, false);
+        common.postToForm("helloWorld", {'name': "DOLPHIN"}, false);
     }
 };
