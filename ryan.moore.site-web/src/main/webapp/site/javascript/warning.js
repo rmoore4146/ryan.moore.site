@@ -10,7 +10,7 @@ var warning = {
     initEvents: function() {
 
         $('#bodyDiv').delegate(".continueButton", "click", function() {
-            warning.continue();
+            warning.continueOn();
         });
         $('#bodyDiv').delegate(".cancelButton", "click", function(event) {
             warning.cancel(event);
@@ -27,7 +27,7 @@ var warning = {
         });
     },
 
-    continue: function() {
+    continueOn: function() {
 //        common.postToForm("helloWorld", {'name': "Tom Haynsworth"}, false);
         common.getToForm("home", {}, false);
     },

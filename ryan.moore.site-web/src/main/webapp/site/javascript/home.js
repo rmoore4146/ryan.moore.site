@@ -14,7 +14,7 @@ var home = {
         });
 
         $(function() {
-            $( ".tabs" ).tabs();
+            $( ".tabs" ).tabs().find( ".ui-tabs-nav" ).sortable({ axis: "x" });;
         });
 
         $(function () {
