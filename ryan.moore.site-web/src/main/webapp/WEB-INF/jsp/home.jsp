@@ -8,8 +8,8 @@
 <head>
     <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>sports, phish, coding, life</title>
-    <link type="text/css" href="${contextPath}/site/css/dotluv/jquery-ui-1.8.21.custom.css" rel="Stylesheet" />
+    <title>baby cat</title>
+    <link type="text/css" href="${contextPath}/site/css/dot-luv/jquery-ui-1.8.21.custom.css" rel="Stylesheet" />
     <link type="text/css" href="${contextPath}/site/css/common.css" rel="Stylesheet" />
     <link type="text/css" href="${contextPath}/site/css/home.css" rel="Stylesheet" />
     <script type="text/javascript" src="${contextPath}/site/javascript/jquery-1.7.2.min.js"></script>
@@ -63,7 +63,7 @@
     </div>
     <div id="aboutTab">
         <label for="nameSpan">Name: </label>
-        <span id="nameSpan">${name}</span>
+        <span id="nameSpan">baby cat</span>
         </br>
         <label for="citySpan">City: </label>
         <span id="citySpan">${city}</span>
