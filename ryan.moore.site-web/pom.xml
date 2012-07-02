@@ -330,6 +330,13 @@
             <artifactId>servlet-api</artifactId>
             <version>2.5</version>
         </dependency>
+
+        <!--Local dependencies we need from the project-->
+        <dependency>
+            <groupId>org.ryan.moore</groupId>
+            <artifactId>ryan.moore.site-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <repositories>

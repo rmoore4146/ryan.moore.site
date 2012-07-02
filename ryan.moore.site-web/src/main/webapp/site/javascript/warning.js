@@ -28,7 +28,8 @@ var warning = {
     },
 
     continue: function() {
-        common.postToForm("helloWorld", {'name': "Tom Haynsworth"}, false);
+//        common.postToForm("helloWorld", {'name': "Tom Haynsworth"}, false);
+        common.getToForm("home", {}, false);
     },
 
     cancel: function(event) {
