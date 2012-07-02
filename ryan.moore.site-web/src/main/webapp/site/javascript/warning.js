@@ -17,7 +17,13 @@ var warning = {
         });
         //make the warning box draggable
         $(function() {
-            $( "#draggable" ).draggable();
+            $( ".draggable" ).draggable();
+        });
+        $(function() {
+            $( ".draggableContained" ).draggable({
+                containment:"parent",
+                axis:"x"
+            });
         });
     },
 

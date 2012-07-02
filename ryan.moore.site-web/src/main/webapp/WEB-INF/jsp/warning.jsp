@@ -24,8 +24,8 @@
 </head>
 <body>
     <div id="bodyDiv">
-        <div id="draggable" class="ui-widget-content">
-            <h3 id="warningDivHeader">Warning!!!!!!!</h3> </br></br>
+        <div id="draggableContainer" class="draggable ui-widget-content">
+            <h3 id="warningDivHeader" class="draggableContained">Warning!!!!!!!</h3> </br></br>
             <p>You are about to enter a Devils, Giants, Yankees, and Knicks only zone. Please,
             for the love of jesus, press the 'Cancel' button if you can't handle that. Especially if you are a
             Philly sports fan. Thank you.</p>
