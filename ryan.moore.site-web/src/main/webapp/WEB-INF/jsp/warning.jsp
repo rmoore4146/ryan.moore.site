@@ -11,7 +11,7 @@
     <title>Warning</title>
     <link type="text/css" href="${contextPath}/site/css/warning.css" rel="Stylesheet" />
     <link type="text/css" href="${contextPath}/site/css/common.css" rel="Stylesheet" />
-    <link type="text/css" href="${contextPath}/site/css/smoothness/jquery-ui-1.8.21.custom.css" rel="Stylesheet" />
+    <link type="text/css" href="${contextPath}/site/css/ryanmoore-site/jquery-ui-1.8.21.custom.css" rel="Stylesheet" />
     <script type="text/javascript" src="${contextPath}/site/javascript/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="${contextPath}/site/javascript/warning.js"></script>
     <script type="text/javascript" src="${contextPath}/site/javascript/common.js"></script>
@@ -31,10 +31,10 @@
             Philly sports fan. Thank you.</p>
         </div>
         <button type="button" id="continueButton" class="continueButton">
-            <span>Enter</span>
+            <span class="ui-button-text">Enter</span>
         </button>
         <button type="button" id="cancelButton" class="cancelButton">
-            <span>Cancel</span>
+            <span class="ui-button-text">Cancel</span>
         </button>
     </div>
 </body>
