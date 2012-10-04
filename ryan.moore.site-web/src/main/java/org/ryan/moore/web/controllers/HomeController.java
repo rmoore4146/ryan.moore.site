@@ -1,6 +1,10 @@
 package org.ryan.moore.web.controllers;
 
 import org.ryan.moore.model.Post;
+import org.ryan.moore.service.exception.ExternalServiceLayerException;
+import org.ryan.moore.service.external.fantasynews.api.FantasyNewsService;
+import org.ryan.moore.service.external.fantasynews.model.FantasyNews;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +25,9 @@ public class HomeController {
     private static final String NAME = "Ryan Moore";
     private static final String CITY = "Charleston";
 
+    @Autowired
+    private FantasyNewsService fantasyNewsService;
+
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String homeGet(ModelMap map, HttpServletRequest request) {
 
@@ -30,6 +36,15 @@ public class HomeController {
         //TODO-tech_debt change these to utils or use separate controllers
         List<Post> posts = getPosts();
 
+
+        FantasyNews fantasyNews = null;
+        try {
+            fantasyNews = fantasyNewsService.loadFantasyNews();
+        } catch (ExternalServiceLayerException e) {
+            e.printStackTrace();
+        }
+
+        map.addAttribute("fantasyNews", fantasyNews);
         map.addAttribute("posts", posts);
         map.addAttribute("name" , NAME);
         map.addAttribute("city", CITY);
@@ -45,8 +60,7 @@ public class HomeController {
         post1.setId(1L);
         post1.setLastUpdateDt(new Date());
         post1.setPostTitle("The first...");
-        post1.setPostText("This is a test... welcome to my site. This site uses jQuery, Spring " +
-                "MVC, Google App Engine, Hibernate, & Maven2. Enjoy its beautifulness.");
+        post1.setPostText("Joe dolan is an asshole");
 
         Post post2 = new Post();
         post2.setCreateDt(new Date());

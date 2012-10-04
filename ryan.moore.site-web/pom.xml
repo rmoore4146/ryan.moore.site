@@ -317,6 +317,11 @@
             <artifactId>spring-web</artifactId>
             <version>3.0.5.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+            <version>3.0.5.RELEASE</version>
+        </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -338,6 +343,11 @@
         <dependency>
             <groupId>org.ryan.moore</groupId>
             <artifactId>ryan.moore.site-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ryan.moore</groupId>
+            <artifactId>ryan.moore.site-externalServices</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
