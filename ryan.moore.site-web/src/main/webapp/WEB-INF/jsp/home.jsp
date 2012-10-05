@@ -24,25 +24,17 @@
     </div>
     <div id="homeDiv" class="tabs">
         <ul>
-            <li><a href="#readTab">read</a></li>
+            <li><a href="#fantasyNewsTab">Fantasy News</a></li>
             <li><a href="#postTab">post</a></li>
             <li><a href="#aboutTab">about</a></li>
         </ul>
         <!-- need to make these divs separate for the jQuery styling to work-->
-        <div id="readTab" class="accordion">
-            <c:forEach var="post" items="${posts}">
-                <fmt:formatDate value="${post.createDt}" pattern="MM/dd/yyyy" var="postCreateDt"/>
-                <h3 class="postHeader"><a href="#">${post.postTitle}</a></h3>
-                <div class="postContent">
-                    <p>${post.postText}</p>
-                    <div class="postFooter">
-                        <label for="postNumberSpan">post#: </label>
-                        <span id="postNumberSpan">${post.id} - </span>
-                        <label for="dateSpan">date: </label>
-                        <span id="dateSpan">${postCreateDt}</span>
-                    </div>
-                </div>
-            </c:forEach>
+        <div id="fantasyNewsTab">
+            <div class="postContent">
+                <c:forEach var="headline" items="${fantasyNews.headlines}" varStatus="headlineIndex">
+                    <a href="${headline.links.web.href}">${headline.title}</a><br>
+                </c:forEach>
+            </div>
         </div>
         <div id="postTab">
             <div class="postContent">
@@ -62,8 +54,7 @@
         </div>
     </div>
     <div class="gaeButtonDiv">
-        <img src="https://developers.google.com/appengine/images/appengine-silver-120x30.gif"
-            alt="Powered by Google App Engine" />
+        <img src="https://developers.google.com/appengine/images/appengine-silver-120x30.gif" alt="Powered by Google App Engine" />
     </div>
 </body>
 </html>
