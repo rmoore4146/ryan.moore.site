@@ -7,5 +7,6 @@
              http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <beans:bean id="fantasyNewsService" class="org.ryan.moore.service.external.fantasynews.impl.FantasyNewsServiceImpl"/>
+    <beans:bean id="teamLookupService" class="org.ryan.moore.service.external.team.impl.TeamLookupServiceImpl"/>
 
 </beans:beans>

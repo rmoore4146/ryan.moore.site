@@ -4,6 +4,8 @@ import org.ryan.moore.model.Post;
 import org.ryan.moore.service.exception.ExternalServiceLayerException;
 import org.ryan.moore.service.external.fantasynews.api.FantasyNewsService;
 import org.ryan.moore.service.external.fantasynews.model.FantasyNews;
+import org.ryan.moore.service.external.team.api.TeamLookupService;
+import org.ryan.moore.service.external.team.model.Teams;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -28,6 +30,9 @@ public class HomeController {
     @Autowired
     private FantasyNewsService fantasyNewsService;
 
+    @Autowired
+    private TeamLookupService teamLookupService;
+
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String homeGet(ModelMap map, HttpServletRequest request) {
 
@@ -36,15 +41,18 @@ public class HomeController {
         //TODO-tech_debt change these to utils or use separate controllers
         List<Post> posts = getPosts();
 
-
         FantasyNews fantasyNews = null;
+        List<Teams> teams = null;
+
         try {
             fantasyNews = fantasyNewsService.loadFantasyNews();
+            teams = teamLookupService.loadNFLTeams();
         } catch (ExternalServiceLayerException e) {
             e.printStackTrace();
         }
 
         map.addAttribute("fantasyNews", fantasyNews);
+        map.addAttribute("teams", teams);
         map.addAttribute("posts", posts);
         map.addAttribute("name" , NAME);
         map.addAttribute("city", CITY);
