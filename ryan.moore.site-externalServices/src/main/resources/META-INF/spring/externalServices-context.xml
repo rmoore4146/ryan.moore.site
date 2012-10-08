@@ -12,7 +12,7 @@
     <context:property-placeholder
             ignore-unresolvable="true"
             ignore-resource-not-found="true"
-            location="classpath:ryan_moore_site-web.properties,classpath:ryan_moore_site-external.properties"/>
+            location="classpath:ryan_moore_site-web.properties,classpath:ryan_moore_site-private.properties"/>
 
     <beans:bean id="fantasyNewsService" class="org.ryan.moore.service.external.fantasynews.impl.FantasyNewsServiceImpl">
         <beans:property name="serviceUrl" value="${external.service.fantasy.news}"/>
