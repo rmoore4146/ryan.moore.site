@@ -11,7 +11,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -31,7 +30,7 @@ public class HomeController {
     private TeamLookupService teamLookupService;
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public String homeGet(ModelMap map, HttpServletRequest request) {
+    public String homeGet(ModelMap map) {
 
         FantasyNews fantasyNews = null;
         List<Teams> teams = null;

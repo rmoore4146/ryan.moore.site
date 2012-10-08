@@ -18,7 +18,7 @@ public class TeamLookupServiceImpl extends AbstractExternalRestService implement
 
     public List<Teams> loadNFLTeams() throws ExternalServiceLayerException {
 
-        NFLTeamContainer nflTeamContainer = (NFLTeamContainer) super.doRestServiceCall(NFLTeamContainer.class, NFL_TEAMS_URL);
+        NFLTeamContainer nflTeamContainer = (NFLTeamContainer) super.doRestServiceCall(NFLTeamContainer.class);
         return nflTeamContainer.getSports().get(0).getLeagues().get(0).getTeams();
     }
 }

@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.stream.JsonReader;
+import org.apache.commons.lang.StringUtils;
 import org.ryan.moore.service.exception.ExternalServiceLayerException;
 
 import java.io.IOException;
@@ -18,26 +19,46 @@ import java.net.URLConnection;
  */
 public abstract class AbstractExternalRestService {
 
-    protected Object doRestServiceCall(Class clazz, String serviceUrl) throws ExternalServiceLayerException {
-        //init
-        URLConnection urlConnection = null;
-        JsonReader reader = null;
+    protected String serviceUrl;
+    protected String apiKey;
 
-        //IO stuff
-        try {
-            urlConnection =  new URL(serviceUrl).openConnection();
-            urlConnection.connect();
-            reader = new JsonReader(new InputStreamReader(urlConnection.getInputStream()));
-        } catch (IOException e) {
-            throw new ExternalServiceLayerException("Exception caught attempting to open URL connection", e);
+    protected Object doRestServiceCall(Class clazz) throws ExternalServiceLayerException {
+
+        if (StringUtils.isNotEmpty(serviceUrl) && StringUtils.isNotEmpty(apiKey)) {
+
+            //assemble service url
+            String assembledServiceUrl = serviceUrl + apiKey;
+
+            //init
+            URLConnection urlConnection = null;
+            JsonReader reader = null;
+
+            //IO stuff
+            try {
+                urlConnection =  new URL(assembledServiceUrl).openConnection();
+                urlConnection.connect();
+                reader = new JsonReader(new InputStreamReader(urlConnection.getInputStream()));
+            } catch (IOException e) {
+                throw new ExternalServiceLayerException("Exception caught attempting to open URL connection", e);
+            }
+
+            //get JsonObject, then automagically parse it with gson
+            JsonParser parser = new JsonParser();
+            JsonElement rootElement = parser.parse(reader);
+            JsonObject jsonObject = rootElement.getAsJsonObject();
+            Gson myGson = new Gson();
+
+            return myGson.fromJson(jsonObject, clazz);
+        } else {
+            throw new ExternalServiceLayerException("Service URL or Api Key was null/empty");
         }
+    }
 
-        //get JsonObject, then automagically parse it with gson
-        JsonParser parser = new JsonParser();
-        JsonElement rootElement = parser.parse(reader);
-        JsonObject jsonObject = rootElement.getAsJsonObject();
-        Gson myGson = new Gson();
+    public void setServiceUrl(String serviceUrl) {
+        this.serviceUrl = serviceUrl;
+    }
 
-        return myGson.fromJson(jsonObject, clazz);
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
     }
 }

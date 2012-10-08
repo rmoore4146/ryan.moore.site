@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:context="http://www.springframework.org/schema/context"
              xsi:schemaLocation="http://www.springframework.org/schema/mvc
              http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
              http://www.springframework.org/schema/beans
-             http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+             http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/context
+             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <beans:bean id="fantasyNewsService" class="org.ryan.moore.service.external.fantasynews.impl.FantasyNewsServiceImpl"/>
-    <beans:bean id="teamLookupService" class="org.ryan.moore.service.external.team.impl.TeamLookupServiceImpl"/>
+    <context:property-placeholder
+            ignore-unresolvable="true"
+            ignore-resource-not-found="true"
+            location="classpath:ryan_moore_site-web.properties,classpath:ryan_moore_site-external.properties"/>
+
+    <beans:bean id="fantasyNewsService" class="org.ryan.moore.service.external.fantasynews.impl.FantasyNewsServiceImpl">
+        <beans:property name="serviceUrl" value="${external.service.fantasy.news}"/>
+        <beans:property name="apiKey" value="${external.service.espn.key}"/>
+    </beans:bean>
+
+    <beans:bean id="teamLookupService" class="org.ryan.moore.service.external.team.impl.TeamLookupServiceImpl">
+        <beans:property name="serviceUrl" value="${external.service.team.lookup}"/>
+        <beans:property name="apiKey" value="${external.service.espn.key}"/>
+    </beans:bean>
 
 </beans:beans>

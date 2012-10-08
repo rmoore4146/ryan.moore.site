@@ -11,11 +11,9 @@ import org.ryan.moore.service.external.fantasynews.model.FantasyNews;
  */
 public class FantasyNewsServiceImpl extends AbstractExternalRestService implements FantasyNewsService {
 
-    private final static String FANTASY_NEWS_URL = "http://api.espn.com/v1/fantasy/football/news?apikey=2sd32ckkcj3es4dk9uzhpmzm";
-
     public FantasyNews loadFantasyNews() throws ExternalServiceLayerException {
 
-        //Delegate real call to abstract class
-        return (FantasyNews) super.doRestServiceCall(FantasyNews.class, FANTASY_NEWS_URL);
+        return (FantasyNews) super.doRestServiceCall(FantasyNews.class);
+
     }
 }
