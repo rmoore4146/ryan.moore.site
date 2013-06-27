@@ -13,6 +13,7 @@
     <modules>
         <module>../ryan.moore.site-model</module>
         <module>../ryan.moore.site-externalServices</module>
+        <module>../ryan.moore.site-mobile</module>
         <module>../ryan.moore.site-web</module>
     </modules>
 

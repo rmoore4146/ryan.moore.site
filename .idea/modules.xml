@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ryan.moore.site-externalServices.iml" filepath="$PROJECT_DIR$/ryan.moore.site-externalServices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ryan.moore.site-mobile/ryan.moore.site-mobile.iml" filepath="$PROJECT_DIR$/ryan.moore.site-mobile/ryan.moore.site-mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ryan.moore.site-model.iml" filepath="$PROJECT_DIR$/ryan.moore.site-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ryan.moore.site-parent.iml" filepath="$PROJECT_DIR$/ryan.moore.site-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ryan.moore.site-pojoGenerator.iml" filepath="$PROJECT_DIR$/ryan.moore.site-pojoGenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ryan.moore.site-web.iml" filepath="$PROJECT_DIR$/ryan.moore.site-web.iml" />
+    </modules>
+  </component>
+</project>
+
